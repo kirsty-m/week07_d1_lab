@@ -31,10 +31,22 @@ const formHandler = (event) => {
     const p = document.createElement('p');
     p.textContent = category;
     div.appendChild(p);
-
+    
 };
 form.addEventListener('submit', formHandler);
 
-const delButton = document.createElement('')
+
+
+const delButton = document.createElement('button');
+delButton.value = 'Delete All'
+delButton.textContent = 'Delete All'
+const deleteAll = () => {
+  document.querySelector('ul#reading-list').innerHTML='';
+}
+delButton.addEventListener('click', deleteAll);
+
+
+const body = document.querySelector('body');
+body.appendChild(delButton);
 
 });
