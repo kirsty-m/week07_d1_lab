@@ -31,6 +31,9 @@ const formHandler = (event) => {
     const p = document.createElement('p');
     p.textContent = category;
     div.appendChild(p);
+
+    const delButton = document.querySelector('#delete-button');
+    delButton.style.display ='initial'
     
 };
 form.addEventListener('submit', formHandler);
@@ -40,8 +43,11 @@ form.addEventListener('submit', formHandler);
 const delButton = document.createElement('button');
 delButton.value = 'Delete All'
 delButton.textContent = 'Delete All'
-const deleteAll = () => {
+delButton.id = 'delete-button'
+delButton.style.display = 'none';
+const deleteAll = function() {
   document.querySelector('ul#reading-list').innerHTML='';
+  this.style.display = 'none';
 }
 delButton.addEventListener('click', deleteAll);
 
