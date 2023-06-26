@@ -35,6 +35,7 @@ const formHandler = (event) => {
     const delButton = document.querySelector('#delete-button');
     delButton.style.display ='initial'
     
+    form.reset();
 };
 form.addEventListener('submit', formHandler);
 
